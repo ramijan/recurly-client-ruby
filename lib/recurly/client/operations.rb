@@ -244,16 +244,6 @@ module Recurly
     #   * Records are returned in an arbitrary order. Since results are all
     #     returned at once you can sort the records yourself.
     #
-    # @param sort [String] Sort field. You *really* only want to sort by +updated_at+ in ascending
-    #   order. In descending order updated records will move behind the cursor and could
-    #   prevent some records from being returned.
-    #
-    # @param begin_time [DateTime] Filter by begin_time when +sort=created_at+ or +sort=updated_at+.
-    #   *Note:* this value is an ISO8601 timestamp. A partial timestamp that does not include a time zone will default to UTC.
-    #
-    # @param end_time [DateTime] Filter by end_time when +sort=created_at+ or +sort=updated_at+.
-    #   *Note:* this value is an ISO8601 timestamp. A partial timestamp that does not include a time zone will default to UTC.
-    #
     # @return [Pager<Resources::CouponRedemption>] A list of the the coupon redemptions on an account.
     def list_account_coupon_redemptions(account_id:, **options)
       path = interpolate_path("/sites/{site_id}/accounts/{account_id}/coupon_redemptions", site_id: site_id, account_id: account_id)
@@ -1028,16 +1018,6 @@ module Recurly
     #     results correspond to your request.
     #   * Records are returned in an arbitrary order. Since results are all
     #     returned at once you can sort the records yourself.
-    #
-    # @param sort [String] Sort field. You *really* only want to sort by +updated_at+ in ascending
-    #   order. In descending order updated records will move behind the cursor and could
-    #   prevent some records from being returned.
-    #
-    # @param begin_time [DateTime] Filter by begin_time when +sort=created_at+ or +sort=updated_at+.
-    #   *Note:* this value is an ISO8601 timestamp. A partial timestamp that does not include a time zone will default to UTC.
-    #
-    # @param end_time [DateTime] Filter by end_time when +sort=created_at+ or +sort=updated_at+.
-    #   *Note:* this value is an ISO8601 timestamp. A partial timestamp that does not include a time zone will default to UTC.
     #
     # @return [Pager<Resources::CouponRedemption>] A list of the the coupon redemptions associated with the invoice.
     def list_invoice_coupon_redemptions(invoice_id:, **options)

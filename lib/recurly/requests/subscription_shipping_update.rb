@@ -7,8 +7,8 @@ module Recurly
     class SubscriptionShippingUpdate < Request
 
       # @!attribute address
-      #   @return [ShippingAddressCreate] Create a shipping address on the account and assign it to the subscription. If this and `shipping_address_id` are both present, `shipping_address_id` will take precedence."
-      define_attribute :address, :ShippingAddressCreate
+      #   @return [Hash] Create a shipping address on the account and assign it to the subscription. If this and `shipping_address_id` are both present, `shipping_address_id` will take precedence."
+      define_attribute :address, Hash
 
       # @!attribute address_id
       #   @return [String] Assign a shipping address from the account's existing shipping addresses.
