@@ -31,7 +31,7 @@ module Recurly
       define_attribute :object, String, { :read_only => true }
 
       # @!attribute tax_code
-      #   @return [String] Optional field for EU VAT merchants, Vertex and Avalara AvaTax Pro merchants.
+      #   @return [String] Used by Avalara, Vertex, and Recurly’s built-in tax feature. The tax code values are specific to each tax system. If you are using Recurly’s built-in taxes the values are:  - `FR` – Common Carrier FOB Destination - `FR022000` – Common Carrier FOB Origin - `FR020400` – Non Common Carrier FOB Destination - `FR020500` – Non Common Carrier FOB Origin - `FR010100` – Delivery by Company Vehicle Before Passage of Title - `FR010200` – Delivery by Company Vehicle After Passage of Title - `NT` – Non-Taxable
       define_attribute :tax_code, String
 
       # @!attribute [r] updated_at
