@@ -12,7 +12,7 @@ module Recurly
 
       # @!attribute collection_method
       #   @return [String] Change collection method
-      define_attribute :collection_method, String, { :enum => ["automatic", "manual"] }
+      define_attribute :collection_method, String
 
       # @!attribute custom_fields
       #   @return [Array[CustomField]]
@@ -43,7 +43,7 @@ module Recurly
       define_attribute :renewal_billing_cycles, Integer
 
       # @!attribute shipping_address
-      #   @return [ShippingAddressCreate] Create a shipping address on the account and assign it to the subscription. If this and `shipping_address_id` are both present, `shipping_address_id` will take precedence."
+      #   @return [ShippingAddressCreate] Create a shipping address on the account and assign it to the subscription. If this and `shipping_address_id` are both present, `shipping_address_id` will take precedence.
       define_attribute :shipping_address, :ShippingAddressCreate
 
       # @!attribute shipping_address_id
