@@ -12,7 +12,7 @@ module Recurly
 
       # @!attribute collection_method
       #   @return [String] Collection method
-      define_attribute :collection_method, String, { :enum => ["automatic", "manual"] }
+      define_attribute :collection_method, String
 
       # @!attribute coupon_codes
       #   @return [Array[String]] A list of coupon_codes to be redeemed on the subscription or account during the purchase.
