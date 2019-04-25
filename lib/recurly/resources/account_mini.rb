@@ -18,17 +18,17 @@ module Recurly
       #   @return [String]
       define_attribute :first_name, String
 
-      # @!attribute [r] id
+      # @!attribute id
       #   @return [String]
-      define_attribute :id, String, { :read_only => true }
+      define_attribute :id, String
 
       # @!attribute last_name
       #   @return [String]
       define_attribute :last_name, String
 
-      # @!attribute [r] object
+      # @!attribute object
       #   @return [String] Object type
-      define_attribute :object, String, { :read_only => true }
+      define_attribute :object, String
     end
   end
 end
