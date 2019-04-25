@@ -20,11 +20,11 @@ module Recurly
 
       # @!attribute collection_method
       #   @return [String] An automatic invoice means a corresponding transaction is run using the account's billing information at the same time the invoice is created. Manual invoices are created without a corresponding transaction. The merchant must enter a manual payment transaction or have the customer pay the invoice with an automatic method, like credit card, PayPal, Amazon, or ACH bank payment.
-      define_attribute :collection_method, String, { :enum => ["automatic", "manual"] }
+      define_attribute :collection_method, String
 
-      # @!attribute [r] created_at
+      # @!attribute created_at
       #   @return [DateTime] Created at
-      define_attribute :created_at, DateTime, { :read_only => true }
+      define_attribute :created_at, DateTime
 
       # @!attribute currency
       #   @return [String] 3-letter ISO 4217 currency code.
@@ -46,9 +46,9 @@ module Recurly
       #   @return [DateTime] Date invoice is due. This is the date the net terms are reached.
       define_attribute :due_at, DateTime
 
-      # @!attribute [r] id
+      # @!attribute id
       #   @return [String] Invoice ID
-      define_attribute :id, String, { :read_only => true }
+      define_attribute :id, String
 
       # @!attribute line_items
       #   @return [Hash] Line items are grouped by the role they play.
@@ -62,9 +62,9 @@ module Recurly
       #   @return [String] If VAT taxation and the Country Invoice Sequencing feature are enabled, invoices will have country-specific invoice numbers for invoices billed to EU countries (ex: FR1001). Non-EU invoices will continue to use the site-level invoice number sequence.
       define_attribute :number, String
 
-      # @!attribute [r] object
+      # @!attribute object
       #   @return [String] Object type
-      define_attribute :object, String, { :read_only => true }
+      define_attribute :object, String
 
       # @!attribute paid
       #   @return [Float] The total amount of successful payments transaction on this invoice.
@@ -80,7 +80,7 @@ module Recurly
 
       # @!attribute state
       #   @return [String] Invoice state
-      define_attribute :state, String, { :enum => ["pending", "processing", "past_due", "paid", "failed"] }
+      define_attribute :state, String
 
       # @!attribute subscription_id
       #   @return [String] If the invoice is charging or refunding for a subscription, this is its ID.
@@ -112,11 +112,11 @@ module Recurly
 
       # @!attribute type
       #   @return [String] The original invoice will have a type of `purchase`. Any refunds or voids will create a negative invoice to cancel out the original. `line_item_refund` indicates that specific line items were refunded, while `open_amount_refund` only indicates money was refunded.
-      define_attribute :type, String, { :enum => ["purchase", "line_item_refund", "open_amount_refund"] }
+      define_attribute :type, String
 
-      # @!attribute [r] updated_at
+      # @!attribute updated_at
       #   @return [DateTime] Last updated at
-      define_attribute :updated_at, DateTime, { :read_only => true }
+      define_attribute :updated_at, DateTime
 
       # @!attribute vat_number
       #   @return [String] VAT registration number for the customer on this invoice. This will come from the VAT Number field in the Billing Info or the Account Info depending on your tax settings and the invoice collection method.

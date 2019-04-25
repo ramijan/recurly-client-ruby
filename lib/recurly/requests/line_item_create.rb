@@ -36,7 +36,7 @@ module Recurly
 
       # @!attribute type
       #   @return [String] Line item type.
-      define_attribute :type, String, { :enum => ["charge", "credit"] }
+      define_attribute :type, String
 
       # @!attribute unit_amount
       #   @return [Float] A positive or negative amount with `type=charge` will result in a positive `unit_amount`. A positive or negative amount with `type=credit` will result in a negative `unit_amount`.

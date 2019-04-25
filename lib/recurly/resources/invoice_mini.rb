@@ -16,7 +16,7 @@ module Recurly
 
       # @!attribute state
       #   @return [String] Invoice state
-      define_attribute :state, String, { :enum => ["pending", "processing", "past_due", "paid", "failed"] }
+      define_attribute :state, String
     end
   end
 end

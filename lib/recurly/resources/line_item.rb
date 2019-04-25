@@ -68,7 +68,7 @@ module Recurly
 
       # @!attribute origin
       #   @return [String] A credit created from an original charge will have the value of the charge's origin.
-      define_attribute :origin, String, { :enum => ["plan", "plan_trial", "setup_fee", "add_on_trial", "add_on", "debit", "one_time", "credit", "coupon", "carryforward"] }
+      define_attribute :origin, String
 
       # @!attribute original_line_item_id
       #   @return [String] The line item where the credit originated. Will only have a value if the line item is a credit created from a previous credit, or if the credit was created from a charge refund. For some older invoices this may reference a carryforward charge.
@@ -116,7 +116,7 @@ module Recurly
 
       # @!attribute state
       #   @return [String] Pending line items are charges or credits on an account that have not been applied to an invoice yet. Invoiced line items will always have an `invoice_id` value.
-      define_attribute :state, String, { :enum => ["pending", "invoiced"] }
+      define_attribute :state, String
 
       # @!attribute subscription_id
       #   @return [String] If the line item is a charge or credit for a subscription, this is its ID.
@@ -144,7 +144,7 @@ module Recurly
 
       # @!attribute type
       #   @return [String] Charges are positive line items that debit the account. Credits are negative line items that credit the account.
-      define_attribute :type, String, { :enum => ["charge", "credit"] }
+      define_attribute :type, String
 
       # @!attribute unit_amount
       #   @return [Float] Positive amount for a charge, negative amount for a credit.
