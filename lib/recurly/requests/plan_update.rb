@@ -27,7 +27,7 @@ module Recurly
       define_attribute :description, String
 
       # @!attribute hosted_pages
-      #   @return [PlanHostedPages] Hosted pages settings
+      #   @return [PlanHostedPages]
       define_attribute :hosted_pages, :PlanHostedPages
 
       # @!attribute id
